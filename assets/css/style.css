@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Khôi phục lại cỡ chữ mặc định theo rem */
+body {
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(#050505, #18181d);
+  height: 100vh;
+}
+
+/* ======= common ======= */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+i {
+  color: #fff;
+  cursor: pointer;
+}
+
+img {
+  object-fit: cover;
+}
+
+/* ======= container ======= */
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  background: linear-gradient(#050505, #18181d);
+}
+
+/* ======= side bar ======= */
+.sidebar {
+  height: 100vh;
+  background-color: #18181d;
+}
+
+.sidebar .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 36px;
+  font-weight: bold;
+  gap: 6px;
+}
+
+.sidebar .logo i,
+.sidebar .logo a {
+  font-size: 1.9rem;
+}
+
+/* ======= nav ======= */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 230px;
+}
+
+/* ======= nav top ======= */
+.nav-top ul li a {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 2;
+  font-weight: 500;
+  padding: 16px 52px;
+  gap: 10px;
+}
+
+.nav .nav-top::after {
+  margin: 2.6rem;
+  display: block;
+  content: "";
+  height: 1px;
+  border-radius: 1px;
+  background: #626262;
+}
+
+/* ======= nav bottom ======= */
+.nav-bottom ul li a {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 2;
+  font-weight: 500;
+  padding: 16px 46px;
+  gap: 10px;
+}
+
+/* ======= Left Header ======= */
+.header .left-header {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+}
+
+.header .left-header .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #292929;
+  border: 1px solid #262626;
+  border-radius: 5px;
+  margin: 0px 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.header .left-header .btn i {
+  font-size: 1.4rem;
+}
+
+.header .left-header .search {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 70%;
+  background-color: #1d1d1d;
+  border: 1px solid #262626;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.header .left-header .search input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+}

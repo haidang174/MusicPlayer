@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <!-- Nhúng font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sen:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="container">
+      <aside class="sidebar">
+        <!-- Logo -->
+        <div class="logo">
+          <i class="bx bx-pulse"></i>
+          <a href="#!">Music Player</a>
+        </div>
+        <!-- Nav -->
+        <nav class="nav">
+          <!-- Nav top -->
+          <div class="nav-top">
+            <ul>
+              <li>
+                <a href="#!">
+                  <i class="bx bx-library"></i>
+                  <span>Thư viện</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <i class="bx bx-bolt-circle"></i>
+                  <span>Khám phá</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <i class="bx bx-trending-up"></i>
+                  <span>Bảng xếp hạng</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Nav bottom -->
+          <div class="nav-bottom">
+            <ul>
+              <li>
+                <a href="#!">
+                  <i class="bx bx-category bx-rotate-270"></i>
+                  <span>Chủ đề & thể loại</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <i class="bx bx-history"></i>
+                  <span>Nghe gần đây</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <i class="bx bxs-heart"></i>
+                  <span>Bài hát yêu thích</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <i class="bx bxs-playlist"></i>
+                  <span>Playlist</span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <i class="bx bx-album"></i>
+                  <span>Album</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+      <!-- Header -->
+      <header class="header">
+        <!-- Left header -->
+        <div class="left-header">
+          <button class="btn btn-back">
+            <i class="bx bx-arrow-back"></i>
+          </button>
+          <button class="btn btn-forward">
+            <i class="bx bx-arrow-back bx-flip-horizontal"></i>
+          </button>
+          <form class="search">
+            <i class="bx bx-search"></i>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Tìm kiếm bài hát"
+            />
+          </form>
+        </div>
+        <!-- Right header -->
+        <div class="right-header"></div>
+      </header>
+    </div>
+  </body>
+</html>
