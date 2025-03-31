@@ -67,6 +67,10 @@ img {
   width: 230px;
 }
 
+.nav span:hover {
+  color: #5773ff;
+  transition: all 0.3s ease;
+}
 /* ======= nav top ======= */
 .nav-top ul li a {
   display: flex;
@@ -119,6 +123,11 @@ img {
 
 .header .left-header .btn i {
   font-size: 1.4rem;
+}
+
+.header .left-header .btn i:hover {
+  color: #5773ff;
+  transition: all 0.3s ease;
 }
 
 .header .left-header .search {
