@@ -14,7 +14,7 @@ body {
   height: 100vh;
 }
 
-/* ======= common ======= */
+/* ================= common ================= */
 a {
   text-decoration: none;
   color: #fff;
@@ -29,7 +29,7 @@ img {
   object-fit: cover;
 }
 
-/* ======= container ======= */
+/* ================= container ================= */
 .container {
   width: 100%;
   display: grid;
@@ -37,7 +37,7 @@ img {
   background: linear-gradient(#050505, #18181d);
 }
 
-/* ======= side bar ======= */
+/* ================= side bar ================= */
 .sidebar {
   height: 100vh;
   background-color: #18181d;
@@ -53,12 +53,17 @@ img {
   gap: 6px;
 }
 
+.sidebar .logo a:hover {
+  color: #5773ff;
+  transition: all 0.3s ease;
+}
+
 .sidebar .logo i,
 .sidebar .logo a {
   font-size: 1.9rem;
 }
 
-/* ======= nav ======= */
+/* =================  nav ================= */
 .nav {
   display: flex;
   justify-content: center;
@@ -71,7 +76,8 @@ img {
   color: #5773ff;
   transition: all 0.3s ease;
 }
-/* ======= nav top ======= */
+
+/* =================  nav top ================= */
 .nav-top ul li a {
   display: flex;
   align-items: center;
@@ -83,15 +89,15 @@ img {
 }
 
 .nav .nav-top::after {
-  margin: 2.6rem;
-  display: block;
   content: "";
+  margin: 2rem;
+  display: block;
   height: 1px;
   border-radius: 1px;
   background: #626262;
 }
 
-/* ======= nav bottom ======= */
+/* =================  nav bottom =================  */
 .nav-bottom ul li a {
   display: flex;
   align-items: center;
@@ -102,11 +108,18 @@ img {
   gap: 10px;
 }
 
-/* ======= Left Header ======= */
+/* =================  Header =================  */
+.header {
+  display: flex;
+  align-items: center;
+}
+
+/* =================  Left Header =================  */
 .header .left-header {
   display: flex;
   align-items: center;
   padding: 25px;
+  width: 70%;
 }
 
 .header .left-header .btn {
@@ -149,3 +162,42 @@ img {
   outline: none;
   color: #fff;
 }
+
+/* =================  Right Header =================  */
+.header .right-header {
+  padding: 20px 36px 20px 0;
+}
+
+.header .right-header .profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.header .right-header .profile .user {
+  display: flex;
+}
+
+.header .right-header .profile .user .left {
+  display: flex;
+  align-items: center;
+  background: #32323d;
+  padding: 6px;
+  border-radius: 10px 0 0 10px;
+}
+
+.header .right-header .profile .user .left img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.header .right-header .profile .user .right {
+  background: #25252d;
+  border-radius: 0 10px 10px 0;
+  padding: 13px;
+  color: #fff;
+}
+
+/* =================  Music Player =================  */

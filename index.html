@@ -24,96 +24,114 @@
   <body>
     <!-- Sidebar -->
     <div class="container">
-      <aside class="sidebar">
-        <!-- Logo -->
-        <div class="logo">
-          <i class="bx bx-pulse"></i>
-          <a href="#!">Music Player</a>
+      <aside>
+        <div class="sidebar">
+          <!-- Logo -->
+          <div class="logo">
+            <i class="bx bx-pulse"></i>
+            <a href="#!">Music Player</a>
+          </div>
+          <!-- Nav -->
+          <nav class="nav">
+            <!-- Nav top -->
+            <div class="nav-top">
+              <ul>
+                <li>
+                  <a href="#!">
+                    <i class="bx bx-library"></i>
+                    <span>Thư viện</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="bx bx-bolt-circle"></i>
+                    <span>Khám phá</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="bx bx-trending-up"></i>
+                    <span>Bảng xếp hạng</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Nav bottom -->
+            <div class="nav-bottom">
+              <ul>
+                <li>
+                  <a href="#!">
+                    <i class="bx bx-category bx-rotate-270"></i>
+                    <span>Chủ đề & thể loại</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="bx bx-history"></i>
+                    <span>Nghe gần đây</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="bx bxs-heart"></i>
+                    <span>Bài hát yêu thích</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="bx bxs-playlist"></i>
+                    <span>Playlist</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="bx bx-album"></i>
+                    <span>Album</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-        <!-- Nav -->
-        <nav class="nav">
-          <!-- Nav top -->
-          <div class="nav-top">
-            <ul>
-              <li>
-                <a href="#!">
-                  <i class="bx bx-library"></i>
-                  <span>Thư viện</span>
-                </a>
-              </li>
-              <li>
-                <a href="#!">
-                  <i class="bx bx-bolt-circle"></i>
-                  <span>Khám phá</span>
-                </a>
-              </li>
-              <li>
-                <a href="#!">
-                  <i class="bx bx-trending-up"></i>
-                  <span>Bảng xếp hạng</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- Nav bottom -->
-          <div class="nav-bottom">
-            <ul>
-              <li>
-                <a href="#!">
-                  <i class="bx bx-category bx-rotate-270"></i>
-                  <span>Chủ đề & thể loại</span>
-                </a>
-              </li>
-              <li>
-                <a href="#!">
-                  <i class="bx bx-history"></i>
-                  <span>Nghe gần đây</span>
-                </a>
-              </li>
-              <li>
-                <a href="#!">
-                  <i class="bx bxs-heart"></i>
-                  <span>Bài hát yêu thích</span>
-                </a>
-              </li>
-              <li>
-                <a href="#!">
-                  <i class="bx bxs-playlist"></i>
-                  <span>Playlist</span>
-                </a>
-              </li>
-              <li>
-                <a href="#!">
-                  <i class="bx bx-album"></i>
-                  <span>Album</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
       </aside>
       <!-- Header -->
-      <header class="header">
-        <!-- Left header -->
-        <div class="left-header">
-          <button class="btn btn-back">
-            <i class="bx bx-arrow-back"></i>
-          </button>
-          <button class="btn btn-forward">
-            <i class="bx bx-arrow-back bx-flip-horizontal"></i>
-          </button>
-          <form class="search">
-            <i class="bx bx-search"></i>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Tìm kiếm bài hát"
-            />
-          </form>
+      <header>
+        <div class="header">
+          <!-- Left header -->
+          <div class="left-header">
+            <button class="btn btn-back">
+              <i class="bx bx-arrow-back"></i>
+            </button>
+            <button class="btn btn-forward">
+              <i class="bx bx-arrow-back bx-flip-horizontal"></i>
+            </button>
+            <form class="search">
+              <i class="bx bx-search"></i>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Tìm kiếm bài hát ..."
+              />
+            </form>
+          </div>
+          <!-- Right header -->
+          <div class="right-header">
+            <div class="profile">
+              <i class="bx bxs-cog"></i>
+              <div class="user">
+                <div class="left">
+                  <img src="./assets/img/IMG_5239.jpg" alt="" />
+                </div>
+                <div class="right">
+                  <h5>Name User</h5>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Right header -->
-        <div class="right-header"></div>
       </header>
+      <!-- Music Player -->
+      <div class="music-player"></div>
     </div>
   </body>
 </html>
