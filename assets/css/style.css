@@ -10,7 +10,6 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
-  background: linear-gradient(#050505, #18181d);
   height: 100vh;
 }
 
@@ -21,7 +20,7 @@ a {
 }
 
 i {
-  color: #fff;
+  color: inherit;
   cursor: pointer;
 }
 
@@ -34,10 +33,10 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
-  background: linear-gradient(#050505, #18181d);
+  background: linear-gradient(135deg, #0f0c29, #302b63);
 }
 
-/* ================= side bar ================= */
+/* ================= Side bar ================= */
 .sidebar {
   height: 100vh;
   background-color: #18181d;
@@ -54,108 +53,108 @@ img {
 }
 
 .sidebar .logo a:hover {
-  color: #5773ff;
+  text-shadow: 0 0 50px #7209b7;
   transition: all 0.3s ease;
 }
 
 .sidebar .logo i,
 .sidebar .logo a {
   font-size: 1.9rem;
+  color: #f72585;
 }
 
-/* =================  nav ================= */
+/* =================  Nav ================= */
 .nav {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 230px;
+  width: 250px;
 }
 
-.nav span:hover {
-  color: #5773ff;
+.nav a:hover {
+  color: #f72585;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
-/* =================  nav top ================= */
-.nav-top ul li a {
+.nav-top span {
+  font-weight: bold;
+}
+
+.nav-top ul li a,
+.nav-bottom ul li a {
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 2;
   font-weight: 500;
-  padding: 16px 52px;
+  padding: 15px 50px;
   gap: 10px;
 }
 
-.nav .nav-top::after {
+.nav-top::after {
   content: "";
-  margin: 2rem;
+  margin: 15px 50px;
   display: block;
   height: 1px;
   border-radius: 1px;
   background: #626262;
 }
 
-/* =================  nav bottom =================  */
-.nav-bottom ul li a {
-  display: flex;
-  align-items: center;
-  font-size: 1.4rem;
-  line-height: 2;
-  font-weight: 500;
-  padding: 16px 46px;
-  gap: 10px;
-}
-
 /* =================  Header =================  */
 .header {
   display: flex;
   align-items: center;
+  background-color: #18181d;
 }
 
 /* =================  Left Header =================  */
-.header .left-header {
+.left-header {
   display: flex;
   align-items: center;
   padding: 25px;
   width: 70%;
 }
 
-.header .left-header .btn {
+.left-header .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #292929;
   border: 1px solid #262626;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 0px 5px;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
 }
 
-.header .left-header .btn i {
-  font-size: 1.4rem;
+.left-header .btn i {
+  color: #fff;
 }
 
-.header .left-header .btn i:hover {
-  color: #5773ff;
+.left-header .btn i:hover {
+  color: #f72585;
   transition: all 0.3s ease;
 }
 
-.header .left-header .search {
+.left-header .search {
   margin-left: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 70%;
+  width: 100%;
   background-color: #1d1d1d;
   border: 1px solid #262626;
   padding: 10px;
   border-radius: 8px;
 }
 
-.header .left-header .search input {
+.left-header .search i {
+  color: #fff;
+}
+
+.left-header .search input {
   width: 100%;
   background-color: transparent;
   border: none;
@@ -164,40 +163,51 @@ img {
 }
 
 /* =================  Right Header =================  */
-.header .right-header {
-  padding: 20px 36px 20px 0;
-}
-
-.header .right-header .profile {
+.right-header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
 }
 
-.header .right-header .profile .user {
+.right-header .profile,
+.right-header .setting {
   display: flex;
-}
-
-.header .right-header .profile .user .left {
-  display: flex;
+  margin: 0 10px;
   align-items: center;
-  background: #32323d;
-  padding: 6px;
-  border-radius: 10px 0 0 10px;
+  background: #292929;
+  border-radius: 10px;
 }
 
-.header .right-header .profile .user .left img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+.right-header .profile i:hover,
+.right-header .setting i:hover {
+  color: #f72585;
+  transition: all 0.3s ease;
 }
 
-.header .right-header .profile .user .right {
-  background: #25252d;
-  border-radius: 0 10px 10px 0;
-  padding: 13px;
+.right-header .profile i,
+.right-header .setting i {
   color: #fff;
+  padding: 10px;
+}
+
+.right-header .login {
+  margin-left: 10px;
+  display: flex;
+  text-align: center;
+  background-color: #292929;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.right-header .login a {
+  font-weight: bold;
+  color: #fff;
+}
+
+.right-header .login a:hover {
+  color: #f72585;
+  transition: all 0.3s ease;
 }
 
 /* =================  Music Player =================  */
