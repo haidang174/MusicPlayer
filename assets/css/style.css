@@ -33,7 +33,7 @@ img {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
-  background: linear-gradient(135deg, #0f0c29, #302b63);
+  background: linear-gradient(180deg, #171717, #191919);
 }
 
 /* ================= Side bar ================= */
@@ -106,55 +106,49 @@ img {
 .header {
   display: flex;
   align-items: center;
-  background-color: #18181d;
 }
 
-/* =================  Left Header =================  */
-.left-header {
+.button-header {
   display: flex;
   align-items: center;
   padding: 25px;
-  width: 70%;
+  width: 100%;
 }
 
-.left-header .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #292929;
-  border: 1px solid #262626;
-  border-radius: 10px;
-  margin: 0px 5px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.left-header .btn i {
+.button-header .btn {
+  background-color: transparent;
+  color: currentColor;
+  border: none;
+  font-size: 2rem;
   color: #fff;
 }
 
-.left-header .btn i:hover {
+.button-header .btn i {
+  padding: 5px 10px 5px 10px;
+}
+
+.button-header .btn i:hover {
   color: #f72585;
   transition: all 0.3s ease;
 }
 
-.left-header .search {
+.button-header .search {
   margin-left: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%;
+  width: 70%;
   background-color: #1d1d1d;
   border: 1px solid #262626;
   padding: 10px;
   border-radius: 8px;
 }
 
-.left-header .search i {
+.button-header .search i {
   color: #fff;
 }
 
-.left-header .search input {
+.button-header .search input {
   width: 100%;
   background-color: transparent;
   border: none;
@@ -162,50 +156,25 @@ img {
   color: #fff;
 }
 
-/* =================  Right Header =================  */
-.right-header {
+/* =================  Right section =================  */
+.right-section {
+  padding: 25px 36px 25px 0;
+}
+
+.right-section-top {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
-.right-header .profile,
-.right-header .setting {
-  display: flex;
-  margin: 0 10px;
-  align-items: center;
-  background: #292929;
-  border-radius: 10px;
-}
-
-.right-header .profile i:hover,
-.right-header .setting i:hover {
-  color: #f72585;
-  transition: all 0.3s ease;
-}
-
-.right-header .profile i,
-.right-header .setting i {
+.right-section-top .profile i,
+.right-section-top .setting i {
   color: #fff;
   padding: 10px;
 }
 
-.right-header .login {
-  margin-left: 10px;
-  display: flex;
-  text-align: center;
-  background-color: #292929;
-  border: 1px solid #262626;
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.right-header .login a {
-  font-weight: bold;
-  color: #fff;
-}
-
-.right-header .login a:hover {
+.right-section-top .profile i:hover,
+.right-section-top .setting i:hover {
   color: #f72585;
   transition: all 0.3s ease;
 }
