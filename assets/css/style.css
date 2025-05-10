@@ -10,7 +10,9 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(to top, #1a1a2e, #16213e);
 }
 
 /* ================= common ================= */
@@ -28,26 +30,26 @@ img {
   object-fit: cover;
 }
 
-/* ================= container ================= */
-.container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 4fr 2fr;
-  background: linear-gradient(180deg, #171717, #191919);
+/* ================= Id ================= */
+#audio {
+  display: none;
 }
 
 /* ================= Side bar ================= */
 .sidebar {
-  height: 100vh;
-  background-color: #18181d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  background-color: #17171d;
 }
 
 .sidebar .logo {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  padding: 36px;
+  padding: 35.5px;
   font-weight: bold;
   gap: 6px;
 }
@@ -63,37 +65,32 @@ img {
   color: #f72585;
 }
 
-/* =================  Nav ================= */
+/* ================= Nav ================= */
 .nav {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 250px;
+  width: 220px;
 }
 
 .nav a:hover {
   color: #f72585;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
-.nav-top span {
+.nav .nav-top span {
   font-weight: bold;
 }
 
-.nav-top ul li a,
-.nav-bottom ul li a {
+.nav .nav-top ul li a,
+.nav .nav-bottom ul li a {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
   line-height: 2;
   font-weight: 500;
-  padding: 15px 50px;
+  padding: 15px 35px;
   gap: 10px;
 }
 
-.nav-top::after {
+.nav .nav-top::after {
   content: "";
   margin: 15px 50px;
   display: block;
@@ -102,53 +99,57 @@ img {
   background: #626262;
 }
 
-/* =================  Header =================  */
-.header {
-  display: flex;
-  align-items: center;
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px;
+  display: inline-block;
 }
 
-.button-header {
-  display: flex;
-  align-items: center;
-  padding: 25px;
-  width: 100%;
-}
-
-.button-header .btn {
-  background-color: transparent;
-  color: currentColor;
-  border: none;
-  font-size: 2rem;
-  color: #fff;
-}
-
-.button-header .btn i {
-  padding: 5px 10px 5px 10px;
-}
-
-.button-header .btn i:hover {
+.nav-link.active {
   color: #f72585;
-  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.button-header .search {
+/* =================  Header =================  */
+header .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 220px;
+  height: 90px;
+  background-color: #16161b;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* =================  Left Header =================  */
+header .header .left-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 60%;
+}
+
+header .header .left-header .search {
   margin-left: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 70%;
-  background-color: #1d1d1d;
-  border: 1px solid #262626;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.button-header .search i {
+header .header .left-header .search i {
   color: #fff;
 }
 
-.button-header .search input {
+header .header .left-header .search input {
   width: 100%;
   background-color: transparent;
   border: none;
@@ -156,27 +157,280 @@ img {
   color: #fff;
 }
 
-/* =================  Right section =================  */
-.right-section {
-  padding: 25px 36px 25px 0;
-}
-
-.right-section-top {
+/* =================  Right Header =================  */
+header .header .right-header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 20px;
+  width: 30%;
 }
 
-.right-section-top .profile i,
-.right-section-top .setting i {
+header .header .right-header .profile i,
+header .header .right-header .setting i,
+header .header .right-header .username a {
   color: #fff;
   padding: 10px;
 }
 
-.right-section-top .profile i:hover,
-.right-section-top .setting i:hover {
+header .header .right-header .profile i:hover,
+header .header .right-header .setting i:hover {
   color: #f72585;
   transition: all 0.3s ease;
 }
 
 /* =================  Music Player =================  */
+.music-player {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  height: 90px;
+  color: #fff;
+  background-color: #16161b;
+}
+
+/* =================  Music Player Left =================  */
+.music-player .left {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  width: 30%;
+  gap: 10px;
+}
+
+.music-player .left .song-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.music-player .left .description h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.music-player .left .description h5 {
+  color: #818c9a;
+  padding: 5px 0;
+  font-size: 1.2rem;
+}
+
+.music-player .left .interact .btn {
+  background-color: transparent;
+  color: currentColor;
+  border: none;
+}
+
+.music-player .left .interact i {
+  font-size: 2rem;
+  padding: 5px;
+}
+
+.music-player .left .interact .like-btn .bx-heart {
+  display: inline;
+}
+
+.music-player .left .interact .like-btn .bxs-heart {
+  display: none;
+}
+
+.music-player .left .interact .like-btn.active .bx-heart {
+  display: none;
+}
+
+.music-player .left .interact .like-btn.active .bxs-heart {
+  display: inline;
+  color: #f72585;
+}
+
+/* =================  Music Player Center =================  */
+.music-player .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+}
+.music-player .center .player-actions .buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 5px;
+}
+
+.music-player .center .player-actions .buttons .btn {
+  background-color: transparent;
+  color: currentColor;
+  border: none;
+}
+
+.music-player .center .player-actions .buttons .btn i {
+  font-size: 2rem;
+  padding: 5px;
+}
+
+.music-player .center .player-actions .buttons .pause-play i {
+  font-size: 2.7rem;
+}
+
+.music-player .center .player-actions .buttons .pause-play .bx-play-circle {
+  display: inline;
+}
+
+.music-player .center .player-actions .buttons .pause-play .bx-pause-circle {
+  display: none;
+}
+
+.music-player .center .player-actions .buttons .pause-play.active .bx-play-circle {
+  display: none;
+}
+
+.music-player .center .player-actions .buttons .pause-play.active .bx-pause-circle {
+  display: inline;
+  color: #f72585;
+}
+
+.music-player .center .progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+.music-player .center .progress .progress-bar {
+  height: 5px;
+  appearance: none;
+  background: #fff;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.progress .progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 2px solid #1e1e23;
+  border-radius: 50%;
+}
+
+/* =================  Music Player Right =================  */
+.music-player .right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px;
+  width: 30%;
+}
+
+.music-player .right .buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.music-player .right .buttons .btn {
+  background-color: transparent;
+  color: currentColor;
+  border: none;
+}
+
+.music-player .right .buttons i {
+  font-size: 2rem;
+  padding: 5px;
+}
+
+.music-player .right .btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.music-player .right .btn .volume-bar {
+  height: 5px;
+  appearance: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.music-player .right .btn .volume-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 2px solid #1e1e23;
+  border-radius: 50%;
+}
+
+/* =================  Main Content =================  */
+main .main-content {
+  margin-top: 90px;
+  margin-left: 220px;
+  padding: 20px;
+  padding-bottom: 120px;
+  height: calc(100vh - 91px);
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar cho main-content */
+main .main-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Phần "nút" scrollbar */
+main .main-content::-webkit-scrollbar-thumb {
+  background-color: #92929d;
+  border-radius: 5px;
+}
+
+main .main-content .sidebar-item.active {
+  background-color: #f72585;
+  color: white;
+}
+
+main .main-content .sidebar-item {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background: none;
+}
+
+/* =================  Responsive =================  */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  header .header {
+    left: 0;
+    width: 100%;
+  }
+
+  main .main-content {
+    margin-left: 0;
+  }
+
+  .music-player .center .progress input {
+    width: 100%;
+  }
+
+  .music-player .left,
+  .music-player .right {
+    display: none;
+  }
+
+  .music-player .center {
+    width: 100%;
+  }
+}

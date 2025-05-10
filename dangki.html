@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Đăng ký | BEATWAVE</title>
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <style>
+            /* Giữ nguyên style từ DangNhap.jsp */
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                background: linear-gradient(135deg, #1a1a2e, #16213e);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                overflow: hidden;
+            }
+
+            .wrapper {
+                width: 400px;
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                position: relative;
+            }
+
+            .equalizer {
+                position: absolute;
+                top: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                gap: 3px;
+                height: 40px;
+                z-index: -1;
+            }
+
+            .equalizer .bar {
+                width: 6px;
+                background: linear-gradient(to top, #f72585, #7209b7);
+                border-radius: 3px;
+                animation: equalize 1.5s infinite ease-in-out;
+            }
+
+            .equalizer .bar:nth-child(1) {
+                animation-delay: 0.1s;
+                height: 10px;
+            }
+
+            .equalizer .bar:nth-child(2) {
+                animation-delay: 0.3s;
+                height: 20px;
+            }
+
+            .equalizer .bar:nth-child(3) {
+                animation-delay: 0.5s;
+                height: 30px;
+            }
+
+            .equalizer .bar:nth-child(4) {
+                animation-delay: 0.2s;
+                height: 25px;
+            }
+
+            .equalizer .bar:nth-child(5) {
+                animation-delay: 0.4s;
+                height: 15px;
+            }
+
+            @keyframes equalize {
+
+                0%,
+                100% {
+                    height: 10%;
+                }
+
+                50% {
+                    height: 100%;
+                }
+            }
+
+            h1 {
+                color: #fff;
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 30px;
+                background: linear-gradient(45deg, #f72585, #7209b7);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .input-box {
+                position: relative;
+                margin-bottom: 20px;
+            }
+
+            .input-box input {
+                width: 100%;
+                padding: 15px 20px 15px 45px;
+                background: rgba(255, 255, 255, 0.1);
+                border: none;
+                border-radius: 30px;
+                outline: none;
+                color: #fff;
+                font-size: 1rem;
+            }
+
+            .input-box i {
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #fff;
+                opacity: 0.7;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 12px;
+                background: linear-gradient(45deg, #7209b7, #f72585);
+                border: none;
+                border-radius: 30px;
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+
+            .btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+            }
+
+            .register-link {
+                text-align: center;
+                margin-top: 20px;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+            }
+
+            .register-link a {
+                color: #f72585;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .register-link a:hover {
+                text-decoration: underline;
+            }
+
+            .music-note {
+                position: absolute;
+                font-size: 1.5rem;
+                color: rgba(247, 37, 133, 0.3);
+                animation: float 5s infinite linear;
+                z-index: -1;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 0;
+                }
+
+                10% {
+                    opacity: 1;
+                }
+
+                90% {
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+
+            .loi {
+                color: red;
+                font-size: 15px;
+
+
+            }
+        </style>
+
+    </head>
+
+<body>
+    <!-- Nền hiệu ứng -->
+    <div class="music-note" style="left: 10%; top: 100%; animation-delay: 0s;">♪</div>
+    <div class="music-note" style="left: 20%; top: 100%; animation-delay: 1s;">♫</div>
+    <div class="music-note" style="left: 30%; top: 100%; animation-delay: 2s;">♩</div>
+    <div class="music-note" style="left: 70%; top: 100%; animation-delay: 0.5s;">♪</div>
+    <div class="music-note" style="left: 85%; top: 100%; animation-delay: 1.5s;">♫</div>
+
+
+    <!-- Form -->
+    <div class="equalizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="wrapper">
+        <form action="/Web_Player_Music/DangKiC" method="post">
+            <h1>Đăng kí</h1>
+
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Tên người dùng" required>
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class="bx bxs-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="matkhau" placeholder="Mật khẩu" required>
+                <i class="bx bxs-lock"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="xacnhan" placeholder="Xác nhận mật khẩu" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="date" name="ngaysinh" required>
+                <i class="bx bxs-calendar"></i>
+            </div>
+            <div class="loi" align="center">
+
+            </div>
+            <button type="submit" class="btn">Đăng ký</button>
+            <div class="register-link">
+                <p>Đã có tài khoản? <a href="/Web_Player_Music/view/DangNhap.jsp">Đăng nhập</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

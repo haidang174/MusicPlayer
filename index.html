@@ -13,126 +13,173 @@
       rel="stylesheet"
     />
     <!-- Icon -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Style -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Music Player</title>
   </head>
   <body>
     <!-- Sidebar -->
-    <div class="container">
-      <aside>
-        <div class="sidebar">
-          <!-- Logo -->
-          <div class="logo">
-            <i class="bx bx-pulse"></i>
-            <a href="#!">Music Player</a>
-          </div>
-          <!-- Nav -->
-          <nav class="nav">
-            <!-- Nav top -->
-            <div class="nav-top">
-              <ul>
-                <li>
-                  <a href="#!">
-                    <i class="bx bx-library"></i>
-                    <span>Thư viện</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#!">
-                    <i class="bx bx-bolt-circle"></i>
-                    <span>Khám phá</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#!">
-                    <i class="bx bx-trending-up"></i>
-                    <span>Bảng xếp hạng</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- Nav bottom -->
-            <div class="nav-bottom">
-              <ul>
-                <li>
-                  <a href="#!">
-                    <i class="bx bx-category bx-rotate-270"></i>
-                    <span>Chủ đề & thể loại</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#!">
-                    <i class="bx bx-history"></i>
-                    <span>Nghe gần đây</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#!">
-                    <i class="bx bxs-heart"></i>
-                    <span>Bài hát yêu thích</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#!">
-                    <i class="bx bxs-playlist"></i>
-                    <span>Playlist</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#!">
-                    <i class="bx bx-album"></i>
-                    <span>Album</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+    <aside class="sidebar">
+      <!-- Logo -->
+      <div class="logo">
+        <i class="bx bx-pulse"></i>
+        <a href="#!">Music Player</a>
+      </div>
+
+      <!-- Nav -->
+      <nav class="nav">
+        <!-- Nav top -->
+        <div class="nav-top">
+          <ul>
+            <li>
+              <a href="#!" class="nav-link" data-content="thu_vien">
+                <i class="bx bx-library"></i>
+                <span>Thư viện</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="nav-link" data-content="kham_pha">
+                <i class="bx bx-bolt-circle"></i>
+                <span>Khám phá</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="nav-link" data-content="bang_xep_hang">
+                <i class="bx bx-trending-up"></i>
+                <span>Bảng xếp hạng</span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </aside>
-      <!-- Header -->
-      <header>
-        <div class="header">
-          <div class="button-header">
-            <button class="btn btn-back">
-              <i class="bx bx-arrow-back"></i>
-            </button>
-            <button class="btn btn-forward">
-              <i class="bx bx-arrow-back bx-flip-horizontal"></i>
-            </button>
-            <form class="search">
-              <i class="bx bx-search"></i>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Tìm kiếm bài hát ..."
-              />
-            </form>
-          </div>
+
+        <!-- Nav bottom -->
+        <div class="nav-bottom">
+          <ul>
+            <li>
+              <a href="#!" class="nav-link" data-content="chu_de_va_th_loai">
+                <i class="bx bx-category bx-rotate-270"></i>
+                <span>Chủ đề & thể loại</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="nav-link" data-content="nghe_gan_day">
+                <i class="bx bx-history"></i>
+                <span>Nghe gần đây</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="nav-link" data-content="bai_hat_yeu_thich">
+                <i class="bx bxs-heart"></i>
+                <span>Bài hát yêu thích</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="nav-link" data-content="playlist">
+                <i class="bx bxs-playlist"></i>
+                <span>Playlist</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="nav-link" data-content="album">
+                <i class="bx bx-album"></i>
+                <span>Album</span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </header>
-      <!-- Music Player -->
-      <div class="right-section">
-        <div class="right-section-top">
+      </nav>
+    </aside>
+
+    <!-- Header -->
+    <header>
+      <div class="header">
+        <div class="left-header">
+          <form class="search">
+            <i class="bx bx-search"></i>
+            <input type="text" class="form-control" placeholder="Tìm kiếm bài hát ..." />
+          </form>
+        </div>
+        <div class="right-header">
           <div class="setting">
             <i class="bx bxs-cog"></i>
           </div>
           <div class="profile">
             <i class="bx bxs-user"></i>
           </div>
-        </div>
-        <!-- <div class="music-player">
-          <div class="music-player-top">
-            <div class="header">
-              <h5>Player</h5>
-            </div>
+          <div class="username">
+            <a href="#!">User Name</a>
           </div>
-        </div> -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Music player -->
+    <div class="music-player">
+      <div class="left">
+        <div class="song-info">
+          <div class="poster" id="">
+            <img src="https://liembarbershop.com/wp-content/uploads/2024/07/hieuthuhai-1.jpg" id="" />
+          </div>
+        </div>
+        <div class="description">
+          <h3>vaicaunoicokhiennguoithaydoi(Single)</h3>
+          <h5>HIEU THU HAI</h5>
+        </div>
+        <div class="interact">
+          <button class="btn like-btn">
+            <i class="bx bx-heart"></i>
+            <i class="bx bxs-heart"></i>
+          </button>
+        </div>
+      </div>
+      <div class="center">
+        <div class="player-actions">
+          <div class="buttons">
+            <button class="btn">
+              <i class="bx bx-repeat"></i>
+            </button>
+            <button class="btn">
+              <i class="bx bx-first-page"></i>
+            </button>
+            <button class="btn pause-play">
+              <i class="bx bx-play-circle"></i>
+              <i class="bx bx-pause-circle"></i>
+            </button>
+            <button class="btn">
+              <i class="bx bx-last-page"></i>
+            </button>
+            <button class="btn">
+              <i class="bx bx-shuffle"></i>
+            </button>
+          </div>
+        </div>
+        <div class="progress">
+          <span class="current-time">00:00</span>
+          <input type="range" class="progress-bar" value="0" min="0" max="100" step="1" />
+          <span class="duration">00:00</span>
+          <audio id="audio" src=""></audio>
+        </div>
+      </div>
+      <div class="right">
+        <div class="buttons">
+          <button class="btn">
+            <i class="bx bx-volume-full"></i>
+            <input type="range" class="volume-bar" value="0" min="0" max="100" step="1" />
+          </button>
+          <button class="btn">
+            <i class="bx bxs-playlist"></i>
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- Main -->
+    <main>
+      <div class="main-content" id="main-content"></div>
+    </main>
+
+    <!-- JS -->
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
