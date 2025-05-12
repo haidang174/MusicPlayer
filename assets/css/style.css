@@ -6,19 +6,28 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --primary-color: #f72585;
+  --secondary-color: #1a1a2e;
+  --dark-theme-color: var(--secondary-color);
+  --light-theme-color: linear-gradient(to bottom, #f72585, #7209b7);
+  --text-color: #fff;
+  --bg-color: #16161b;
+}
+
 /* Khôi phục lại cỡ chữ mặc định theo rem */
 body {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
   height: 100%;
   overflow: hidden;
-  background: linear-gradient(to top, #1a1a2e, #16213e);
+  background: var(--dark-theme-color);
 }
 
 /* ================= common ================= */
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
 }
 
 i {
@@ -54,15 +63,18 @@ img {
   gap: 6px;
 }
 
+.sidebar .logo a {
+  transition: all 0.3s ease;
+}
+
 .sidebar .logo a:hover {
   text-shadow: 0 0 50px #7209b7;
-  transition: all 0.3s ease;
 }
 
 .sidebar .logo i,
 .sidebar .logo a {
   font-size: 1.9rem;
-  color: #f72585;
+  color: var(--primary-color);
 }
 
 /* ================= Nav ================= */
@@ -71,7 +83,7 @@ img {
 }
 
 .nav a:hover {
-  color: #f72585;
+  color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
@@ -101,13 +113,13 @@ img {
 
 .nav-link {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--text-color);
   padding: 10px;
   display: inline-block;
 }
 
 .nav-link.active {
-  color: #f72585;
+  color: var(--primary-color);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -118,8 +130,7 @@ header .header {
   right: 0;
   left: 220px;
   height: 90px;
-  background-color: #16161b;
-  z-index: 2;
+  background-color: var(--bg-color);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -146,7 +157,7 @@ header .header .left-header .search {
 }
 
 header .header .left-header .search i {
-  color: #fff;
+  color: var(--text-color);
 }
 
 header .header .left-header .search input {
@@ -154,7 +165,7 @@ header .header .left-header .search input {
   background-color: transparent;
   border: none;
   outline: none;
-  color: #fff;
+  color: var(--text-color);
 }
 
 /* =================  Right Header =================  */
@@ -167,16 +178,67 @@ header .header .right-header {
 }
 
 header .header .right-header .profile i,
-header .header .right-header .setting i,
 header .header .right-header .username a {
-  color: #fff;
+  color: var(--text-color);
   padding: 10px;
 }
 
-header .header .right-header .profile i:hover,
-header .header .right-header .setting i:hover {
-  color: #f72585;
+header .header .right-header .profile i:hover {
+  color: var(--primary-color);
   transition: all 0.3s ease;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 13px;
+  cursor: pointer;
+  border: 2px solid var(--secondary-color);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--primary-color);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: inset 8px -3px 0px 0px var(--primary-color);
+  background-color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(22px);
+  background-color: var(--secondary-color);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 /* =================  Music Player =================  */
@@ -189,8 +251,8 @@ header .header .right-header .setting i:hover {
   top: auto;
   bottom: 0;
   height: 90px;
-  color: #fff;
-  background-color: #16161b;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 /* =================  Music Player Left =================  */
@@ -245,7 +307,7 @@ header .header .right-header .setting i:hover {
 
 .music-player .left .interact .like-btn.active .bxs-heart {
   display: inline;
-  color: #f72585;
+  color: var(--primary-color);
 }
 
 /* =================  Music Player Center =================  */
@@ -264,7 +326,7 @@ header .header .right-header .setting i:hover {
 
 .music-player .center .player-actions .buttons .btn {
   background-color: transparent;
-  color: currentColor;
+  color: var(--text-color);
   border: none;
 }
 
@@ -291,6 +353,10 @@ header .header .right-header .setting i:hover {
 
 .music-player .center .player-actions .buttons .pause-play.active .bx-pause-circle {
   display: inline;
+  color: var(--primary-color);
+}
+
+.music-player .center .player-actions .btn.active {
   color: #f72585;
 }
 
@@ -301,7 +367,7 @@ header .header .right-header .setting i:hover {
   padding: 10px;
   border-radius: 5px;
   gap: 10px;
-  color: #fff;
+  color: var(--text-color);
   font-size: 1.4rem;
   width: 100%;
 }
@@ -309,7 +375,7 @@ header .header .right-header .setting i:hover {
 .music-player .center .progress .progress-bar {
   height: 5px;
   appearance: none;
-  background: #fff;
+  background: linear-gradient(to right, #f72585 0%, #f72585 0%, var(--text-color) 0%, var(--text-color) 100%);
   border-radius: 2px;
   outline: none;
   cursor: pointer;
@@ -318,9 +384,9 @@ header .header .right-header .setting i:hover {
 
 .progress .progress-bar::-webkit-slider-thumb {
   appearance: none;
-  width: 14px;
-  height: 14px;
-  background: #fff;
+  width: 15px;
+  height: 15px;
+  background: var(--text-color);
   border: 2px solid #1e1e23;
   border-radius: 50%;
 }
@@ -342,7 +408,7 @@ header .header .right-header .setting i:hover {
 
 .music-player .right .buttons .btn {
   background-color: transparent;
-  color: currentColor;
+  color: var(--text-color);
   border: none;
 }
 
@@ -368,9 +434,58 @@ header .header .right-header .setting i:hover {
   appearance: none;
   width: 14px;
   height: 14px;
-  background: #fff;
+  background: linear-gradient(to right, #f72585 0%, #f72585 0%, var(--text-color) 0%, var(--text-color) 100%);
   border: 2px solid #1e1e23;
   border-radius: 50%;
+}
+
+.music-player .right .playlist-sidebar {
+  position: fixed;
+  top: 0px;
+  bottom: 90px;
+  right: -300px;
+  width: 300px;
+  background-color: #1a1a2e;
+  color: var(--text-color);
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.5s ease;
+  z-index: 1;
+}
+
+.music-player .right .playlist-sidebar.show {
+  right: 0;
+}
+
+.music-player .right .sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#closeSidebar {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.music-player .right .btn .bxs-playlist.active {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+/* =================  Scrollbar =================  */
+/* Custom Scrollbar cho main-content */
+main .main-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Phần "nút" scrollbar */
+main .main-content::-webkit-scrollbar-thumb {
+  background-color: #92929d;
+  border-radius: 5px;
 }
 
 /* =================  Main Content =================  */
@@ -383,27 +498,87 @@ main .main-content {
   overflow-y: auto;
 }
 
-/* Custom Scrollbar cho main-content */
-main .main-content::-webkit-scrollbar {
-  width: 5px;
+main .main-content .banner {
+  width: 100%;
 }
 
-/* Phần "nút" scrollbar */
-main .main-content::-webkit-scrollbar-thumb {
-  background-color: #92929d;
-  border-radius: 5px;
+main .main-content .section {
+  margin-top: 50px;
 }
 
-main .main-content .sidebar-item.active {
-  background-color: #f72585;
-  color: white;
+main .main-content .suggestion .title {
+  font-size: 2rem;
+  color: var(--text-color);
+  font-weight: bold;
+  margin: 10px 0;
 }
 
-main .main-content .sidebar-item {
-  cursor: pointer;
-  padding: 10px;
-  border: none;
-  background: none;
+main .main-content .suggestion .list {
+  margin: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .main-content .suggestion .list .item {
+  margin-top: 20px;
+}
+
+main .main-content .suggestion .list .item .media {
+  display: flex;
+  align-items: center;
+}
+
+main .main-content .suggestion .list .item .media .song-info {
+  margin-left: 10px;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-color);
+}
+
+main .main-content .suggestion .list .item .media .song-info .song-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+main .main-content .suggestion .list .item .media .song-info .song-title:hover {
+  color: var(--primary-color);
+}
+
+main .main-content .suggestion .list .item .media .song-info .subtitle {
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #ccc;
+}
+
+main .main-content .suggestion .list .item .media .song-info .subtitle .singer {
+  font-size: 1.3rem;
+  color: #ccc;
+}
+
+main .main-content .suggestion .list .item .media .song-info .subtitle .singer:hover {
+  text-decoration: underline;
+}
+
+main .main-content .suggestion .list .item .media .song-thumb img {
+  width: 60px;
+  height: 60px;
+}
+
+main .main-content .artist .subtitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+main .main-content .artist .title {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 /* =================  Responsive =================  */
