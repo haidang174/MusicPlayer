@@ -16,6 +16,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Style -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+
     <title>Music Player</title>
   </head>
   <body>
@@ -31,21 +32,21 @@
       <nav class="nav">
         <!-- Nav top -->
         <div class="nav-top">
-          <ul>
-            <li>
-              <a href="#!" class="nav-link" data-content="thu_vien">
+          <ul class="menu">
+            <li class="navbar-item">
+              <a href="#!">
                 <i class="bx bx-library"></i>
                 <span>Thư viện</span>
               </a>
             </li>
-            <li>
-              <a href="#!" class="nav-link" data-content="kham_pha">
+            <li class="navbar-item">
+              <a href="#!">
                 <i class="bx bx-bolt-circle"></i>
                 <span>Khám phá</span>
               </a>
             </li>
-            <li>
-              <a href="#!" class="nav-link" data-content="bang_xep_hang">
+            <li class="navbar-item">
+              <a href="#!">
                 <i class="bx bx-trending-up"></i>
                 <span>Bảng xếp hạng</span>
               </a>
@@ -55,33 +56,33 @@
 
         <!-- Nav bottom -->
         <div class="nav-bottom">
-          <ul>
-            <li>
-              <a href="#!" class="nav-link" data-content="chu_de_va_th_loai">
+          <ul class="menu">
+            <li class="navbar-item">
+              <a href="#!">
                 <i class="bx bx-category bx-rotate-270"></i>
                 <span>Chủ đề & thể loại</span>
               </a>
             </li>
-            <li>
-              <a href="#!" class="nav-link" data-content="nghe_gan_day">
+            <li class="navbar-item">
+              <a href="#!">
                 <i class="bx bx-history"></i>
                 <span>Nghe gần đây</span>
               </a>
             </li>
-            <li>
-              <a href="#!" class="nav-link" data-content="bai_hat_yeu_thich">
+            <li class="navbar-item">
+              <a href="#!">
                 <i class="bx bxs-heart"></i>
                 <span>Bài hát yêu thích</span>
               </a>
             </li>
-            <li>
-              <a href="#!" class="nav-link" data-content="playlist">
+            <li class="navbar-item">
+              <a href="#!">
                 <i class="bx bxs-playlist"></i>
                 <span>Playlist</span>
               </a>
             </li>
-            <li>
-              <a href="#!" class="nav-link" data-content="album">
+            <li class="navbar-item">
+              <a href="#!">
                 <i class="bx bx-album"></i>
                 <span>Album</span>
               </a>
@@ -120,159 +121,168 @@
     <!-- Main -->
     <main>
       <div class="main-content" id="main-content">
-        <div class="banner">
-          <img src="./assets/img/banner.png" alt="banner" />
-        </div>
-        <!-- suggestion -->
-        <div class="section suggestion">
-          <h3 class="title">Gợi Ý Cho Bạn</h3>
-          <div class="list">
-            <!-- Column 1 -->
-            <div class="column">
-              <!-- Item 1 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+        <section class="section hidden" id="library">Nội dung Thư viện</section>
+        <section class="section" id="discover">
+          <div class="banner">
+            <img src="./assets/img/banner.png" alt="banner" />
+          </div>
+          <!-- suggestion -->
+          <div class="section suggestion">
+            <h3 class="title">Gợi Ý Cho Bạn</h3>
+            <div class="list">
+              <!-- Column 1 -->
+              <div class="column">
+                <!-- Item 1 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
                   </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
+                </div>
+                <!-- Item 2 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!-- Item 2 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+              <!-- Column 2 -->
+              <div class="column">
+                <!-- Item 1 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
                   </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
+                </div>
+                <!-- Item 2 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!-- Item 3 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
-                  </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Column 2 -->
-            <div class="column">
-              <!-- Item 1 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
-                  </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
+              <!-- Column 3 -->
+              <div class="column">
+                <!-- Item 1 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!-- Item 2 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
-                  </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 3 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
-                  </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
+                <!-- Item 2 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <!-- Column 3 -->
-            <div class="column">
-              <!-- Item 1 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
-                  </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 2 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
-                  </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 3 -->
-              <div class="item">
-                <div class="media">
-                  <div class="song-thumb">
-                    <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
-                  </div>
-                  <div class="song-info">
-                    <a class="song-title" href="">Không thể say</a>
-                    <h3 class="subtitle">
-                      <a class="singer" href="">HIEUTHUHAI</a>
-                    </h3>
+                <!-- Item 3 -->
+                <div class="item">
+                  <div class="media">
+                    <div class="song-thumb">
+                      <img src="./assets/img/hieuthuhai-1.jpg" alt="" />
+                    </div>
+                    <div class="song-info">
+                      <a class="song-title" href="">Không thể say</a>
+                      <h3 class="subtitle">
+                        <a class="singer" href="">HIEUTHUHAI</a>
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Artist -->
-        <div class="section artist">
-          <h3 class="subtitle">Dành Cho Fan</h3>
-          <h3 class="title">
-            <a href="">HIEUTHUHAI</a>
-          </h3>
-          <div class="list"></div>
-        </div>
+          <!-- Artist -->
+          <div class="section artist">
+            <h3 class="subtitle">Dành Cho Fan</h3>
+            <h3 class="title">
+              <a href="">HIEUTHUHAI</a>
+            </h3>
+            <div class="list"></div>
+          </div>
+        </section>
+        <section class="section hidden" id="ranking">Nội dung Bảng xếp hạng</section>
+        <section class="section hidden" id="categories">Nội dung Chủ đề & thể loại</section>
+        <section class="section hidden" id="recent">Nội dung Nghe gần đây</section>
+        <section class="section hidden" id="favorites">Nội dung Bài hát yêu thích</section>
+        <section class="section hidden" id="playlist">Nội dung Playlist</section>
+        <section class="section hidden" id="album">Nội dung Album</section>
       </div>
     </main>
 

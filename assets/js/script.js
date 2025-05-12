@@ -1,68 +1,72 @@
-const navLinks = document.querySelectorAll(".nav-link");
-const mainContent = document.getElementById("main-content");
+document.addEventListener("DOMContentLoaded", function () {
+  const navItems = document.querySelectorAll(".navbar-item a");
+  const sections = {
+    "Thư viện": "library",
+    "Khám phá": "discover",
+    "Bảng xếp hạng": "ranking",
+    "Chủ đề & thể loại": "categories",
+    "Nghe gần đây": "recent",
+    "Bài hát yêu thích": "favorites",
+    Playlist: "playlist",
+    Album: "album"
+  };
 
-const contentMap = {
-  thu_vien: "<h2>Trang chủ</h2><p>Chào mừng bạn đến với trang chủ!</p>",
-  kham_pha: "<h2>Nhạc</h2><p>Danh sách bài hát đang phát...</p>",
-  bang_xep_hang: "<h2>Giới thiệu</h2><p>Ứng dụng nghe nhạc đơn giản.</p>"
-};
+  navItems.forEach(item => {
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
 
-navLinks.forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault(); // ngăn chuyển trang
+      const selected = this.querySelector("span").textContent.trim();
 
-    // Đổi nội dung
-    const key = link.getAttribute("data-content");
-    mainContent.innerHTML = contentMap[key] || "<p>Không tìm thấy nội dung.</p>";
+      // Ẩn tất cả section
+      Object.values(sections).forEach(id => {
+        const section = document.getElementById(id);
+        if (section) section.classList.add("hidden");
+      });
 
-    // Làm nổi bật nav đang chọn
-    navLinks.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
+      // Hiện section được chọn
+      if (sections[selected]) {
+        const section = document.getElementById(sections[selected]);
+        if (section) section.classList.remove("hidden");
+      }
+
+      // Bỏ class active ở tất cả item
+      navItems.forEach(nav => nav.parentElement.classList.remove("active"));
+
+      // Thêm class active vào item được click
+      this.parentElement.classList.add("active");
+    });
   });
 });
 
 //Chuyển sáng/tối
-const checkbox = document.querySelector(".checkbox");
+document.addEventListener("DOMContentLoaded", function () {
+  const checkbox = document.querySelector(".checkbox");
 
-checkbox.addEventListener("change", function () {
-  const root = document.documentElement;
-  const isLight = this.checked;
+  checkbox.addEventListener("change", function () {
+    const root = document.documentElement;
+    const isLight = this.checked;
 
-  root.style.setProperty("--dark-theme-color", getComputedStyle(root).getPropertyValue(isLight ? "--light-theme-color" : "--secondary-color"));
+    root.style.setProperty("--dark-theme-color", getComputedStyle(root).getPropertyValue(isLight ? "--light-theme-color" : "--secondary-color"));
+  });
 });
 
-//Music player
+// Music Player
 document.addEventListener("DOMContentLoaded", function () {
+  // Yêu thích
   const likeBtn = document.querySelector(".like-btn");
 
   likeBtn.addEventListener("click", function () {
     likeBtn.classList.toggle("active");
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Play - Pause
   const playPauseBtn = document.querySelector(".pause-play");
 
   playPauseBtn.addEventListener("click", function () {
     playPauseBtn.classList.toggle("active");
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleBtn = document.getElementById("playlistToggle");
-  const sidebar = document.getElementById("playlistSidebar");
-  const closeBtn = document.getElementById("closeSidebar");
-
-  toggleBtn.addEventListener("click", () => {
-    const isShown = sidebar.classList.toggle("show");
-    toggleBtn.classList.toggle("active", isShown);
-  });
-
-  closeBtn.addEventListener("click", () => {
-    sidebar.classList.remove("show");
-    toggleBtn.classList.remove("active");
-  });
-
+  // Các nút khác
   const actionButtons = document.querySelectorAll(".player-actions .btn1");
 
   actionButtons.forEach(btn => {
@@ -71,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Thanh nhạc chạy
   const progressBar = document.querySelector(".progress-bar");
 
   // Hàm cập nhật màu thanh tiến trình
@@ -95,11 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgressBarColor(savedProgress); // Cập nhật màu cho thanh tiến trình
   }
 
-  // Gọi 1 lần khi trang load (nếu có giá trị đã lưu trong localStorage)
-  if (savedProgress !== null) {
-    updateProgressBarColor(savedProgress);
-  }
-
+  // Thanh âm thanh
   const volumeBar = document.querySelector(".volume-bar");
 
   // Hàm cập nhật màu thanh tiến trình
@@ -124,8 +125,18 @@ document.addEventListener("DOMContentLoaded", function () {
     updateVolumeBarColor(savedVolume); // Cập nhật màu cho thanh tiến trình
   }
 
-  // Gọi 1 lần khi trang load (nếu có giá trị đã lưu trong localStorage)
-  if (savedVolume !== null) {
-    updateVolumeBarColor(savedVolume);
-  }
+  // Đóng mở Playlist
+  const toggleBtn = document.getElementById("playlistToggle");
+  const sidebar = document.getElementById("playlistSidebar");
+  const closeBtn = document.getElementById("closeSidebar");
+
+  toggleBtn.addEventListener("click", () => {
+    const isShown = sidebar.classList.toggle("show");
+    toggleBtn.classList.toggle("active", isShown);
+  });
+
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("show");
+    toggleBtn.classList.remove("active");
+  });
 });
